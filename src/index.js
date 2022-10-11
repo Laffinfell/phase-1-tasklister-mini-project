@@ -1,16 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
 // your code here
-  let form = document.querySelector('create-task-form')
-  form.addEventListener('id-submit', (e) => {
-  e.preventDefault()
-  handleToDo(e.target.new-task-description.value)
-  form.requestFullscreen()
-  })
+  let form = document.querySelector('#create-task-form')
+  form.addEventListener('submit', handleToDo)
+  
 })
 
-function handleToDo(todo){
+function handleToDo(e){
+  e.preventDefault()
+  console.log('hello')
+  let todo = e.target.elements[0].value
   let p = document.createElement('p')
-  p.textContent = `${todo}`
+  p.textContent = `${todo} `
   let btn = document.createElement('button')
   btn.addEventListener('click', handleDelete)
   btn.textContent = 'x'
