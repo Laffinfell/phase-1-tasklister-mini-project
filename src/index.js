@@ -17,6 +17,9 @@ function handleToDo(e){
   p.appendChild(btn)
   console.log(p)
   document.querySelector('#todoContainer').appendChild(p)
+  let input = document.createElement('input')
+  input.addEventListener('click', placeholder='due date')
+  input.appendChild(input)
 }
 
 function handleDelete(e) {
